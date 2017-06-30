@@ -56,6 +56,8 @@ func main() {
 
 	defer server.Shutdown()
 
+	server.Port = 8080
+	Register("ms01", server.Port)
 	if err := server.Serve(); err != nil {
 		log.Fatalln(err)
 	}
